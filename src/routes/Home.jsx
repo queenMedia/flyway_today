@@ -3,13 +3,15 @@ import {
 } from "@sharing/organisms"
 
 import { 
-  Testimonials
+  Access,
+  Testimonials,
 } from "@organisms"
 
 function Home() {
 
   return (
     <>
+      <Access />
       <Testimonials />
       <Footer />
     </>
