@@ -1,6 +1,21 @@
 import { css, cx } from "@emotion/css"
 import { forsize, font, handlePaddings, grid, flex } from "@mixins";
 
+export const container = cx(
+    forsize({
+        "desktop": cx(
+            css`
+                padding: 40px 0;
+            `
+        ),
+        "tablet-landscape": cx(
+            css`
+                padding: 20px 0;
+            `
+        )
+    })
+)
+
 export const title = cx(
     font({
         max: 16,

@@ -6,6 +6,7 @@ export const footer = cx(
     flex({}),
     css`
         width: 100%;
+        background: var(--gray-100, #F3F4F6);
     `
 )
 
@@ -17,7 +18,8 @@ export const container = cx(
         width: "1280px"
     }),
     css`
-    `
+      padding: 80px 0;
+    `, responsive.container
 )
 
 export const top_footer = cx(

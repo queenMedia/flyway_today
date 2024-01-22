@@ -9,3 +9,4 @@ export { default as Mail } from "./Mail/Mail"
 export { default as Address } from "./Address/Address"
 
 
+export { default as Stars } from "./Stars/Stars"
