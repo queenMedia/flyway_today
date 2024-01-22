@@ -1,11 +1,12 @@
+import {
+  Footer
+} from "@sharing/organisms"
 
 function Home() {
 
   return (
     <>
-      <div>
-        Hello world
-      </div>
+      <Footer />
     </>
   )
 }

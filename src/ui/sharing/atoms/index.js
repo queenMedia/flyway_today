@@ -1,12 +1,11 @@
 export { default as Button } from "./Button/Button"
-export { default as Error } from "./Error/Error"
-export { default as ErrorLabel } from "./ErrorLabel/ErrorLabel"
-export { default as Input } from "./Input/Input"
-export { default as InputLabel } from "./InputLabel/InputLabel"
-export { default as Loader } from "./Loader/Loader"
 export { default as MenuIcon } from "./MenuIcon/MenuIcon"
 export { default as DropDownArrow } from "./DropDownArrow/DropDownArrow"
 export { default as DropdownHeader } from "./DropdownHeader/DropdownHeader"
 export { default as DropdownWrapper } from "./DropdownWrapper/DropdownWrapper"
 export { default as DropdownText } from "./DropdownText/DropdownText"
 export { default as DropdownTitle } from "./DropdownTitle/DropdownTitle"
+export { default as Mail } from "./Mail/Mail"
+export { default as Address } from "./Address/Address"
+
+

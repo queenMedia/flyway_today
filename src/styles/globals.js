@@ -6,6 +6,7 @@ export const globals = css`
     outline: 0;
     padding: 0;
     margin: 0;
+    font-family: 'DM Sans', sans-serif;
     &::before,
     &::after {
       box-sizing: border-box;
