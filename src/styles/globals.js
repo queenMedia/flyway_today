@@ -61,4 +61,12 @@ export const globals = css`
   input[type="number"] {
     -moz-appearance: textfield;
   }
+
+  section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
 `;
