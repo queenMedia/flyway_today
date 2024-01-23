@@ -23,16 +23,16 @@ export const input_container = ({
 	type
 }) => cx(
 	grid({
-		columns: (type === "number" ? "auto 1fr": "100%"),
+		columns: "auto 1fr",
 	}),
 	handleHeight({
-		max: JSON.parse(input_height),
-		min: JSON.parse(input_height_min),
+		max: input_height,
+		min: input_height_min,
 		rule: "min"
 	}),
 	handleHeight({
-		max: JSON.parse(input_height),
-		min: JSON.parse(input_height_min),
+		max: input_height,
+		min: input_height_min,
 		rule: "max"
 	}),
 	css`
@@ -42,7 +42,7 @@ export const input_container = ({
 		min-height: ${input_height}px;
 		border-radius: ${input_rounded}px;
 		border: 1px solid  ${input_border};
-		${JSON.parse(input_shadow) && !JSON.parse(input_inset) ? 
+		${input_shadow && !input_inset ? 
 		`box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5)` : ``};
 	`, responsive.input_container
 );
@@ -86,7 +86,7 @@ export const input = ({
 		border: none;
 		background: ${input_background};
 		color: ${input_color};
-		${JSON.parse(input_shadow) && JSON.parse(input_inset)  ? 
+		${input_shadow && input_inset  ? 
 		 `box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5)` : ``};
 		&::placeholder{
 			color: ${placeholder_color};

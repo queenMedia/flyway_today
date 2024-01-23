@@ -8,9 +8,9 @@ export const bar = cx(
     display: block;
     position: relative;
     cursor: pointer;
-    width: 200px;
-    height: 150px;
-    
+    width: 24px;
+    height: 19px;
+    z-index: 999;
   `
 );
 

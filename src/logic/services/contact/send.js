@@ -1,6 +1,6 @@
-export const sendContact = async () => {
+export const sendContact = async (values) => {
   try {
-    console.log("Submited")
+    console.table(values)
     return
   } catch (error) {
     if (error.response) {

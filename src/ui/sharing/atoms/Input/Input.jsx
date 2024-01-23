@@ -1,34 +1,31 @@
 import { useContext } from "react"
 import { FormContext } from "@contexts"
 import { InputLabel, ErrorLabel } from "@sharing/atoms"
-import { useSelector } from 'react-redux';
-import { useWindowSize } from "@hooks"
-
+import { form } from "@data/hero"
+import { inputs, input_config } from "@constants/form"
 import * as styles from "./Input.style"
 
 export default function Input({id}) {
-  const { width } = useWindowSize();
-	const { input_config, inputs } = useSelector(({config}) => config);
+  const { input_icons } = form;
 	const { [id]: input_props } = inputs;
 	const { label, placeholder, type } = input_props;
 	const { label_display } = input_config;
-	const { formik, currentCountry } = useContext(FormContext);
-	const { phoneCode, flag, countryCode } = currentCountry;
+	const { formik, } = useContext(FormContext);
   return (
     <div className={styles.container}>
-      {JSON.parse(label_display) && <InputLabel id={id}>{label}</InputLabel>}
+      {label_display && <InputLabel id={id}>{label}</InputLabel>}
 			<div className={styles.input_container({...input_config, type})}>
-				{type === "number" && (
-					<div className={styles.code(input_config)}>
-						<img 
-							src={flag} 
-							alt={`Flag form ${countryCode}`}
-							width={28}
-							height={18.5}
-						/>
-						<p>{`${width > 768 ? "+" : ""} ${phoneCode}`}</p>
-					</div>
-				)}
+        <div className={styles.code(input_config)}>
+          <img 
+            src={input_icons[id]}
+            alt="input icon"
+            width={20}
+            height={"auto"}
+          />
+				  {type === "number" && (
+						<p>{`+ 52`}</p>
+          )}
+        </div>
 				<input 
 					id={id}
 					type={type} 

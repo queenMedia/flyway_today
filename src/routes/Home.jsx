@@ -1,12 +1,11 @@
-
+import Layout from "./Layout"
+import { Hero } from "@organisms"
 function Home() {
 
   return (
-    <>
-      <div>
-        Hello world
-      </div>
-    </>
+    <Layout>
+      <Hero />
+    </Layout>
   )
 }
 

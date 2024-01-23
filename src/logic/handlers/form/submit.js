@@ -1,21 +1,14 @@
+import { sendContact } from "@services/contact/send"
 export const handleSubmit = async ({
   values,
-  loading,
-  responseData,
-  showResponse,
-  service,
+  loading
 }) => {
   loading(true);
   try {
-    const response = await service(values);
-    responseData(response.get());
-    showResponse(true);
-    setTimeout(() => showResponse(false), 3000);
+    const response = await sendContact(values);
+    return
   } catch (error) {
-      responseData({
-          success: false,
-          message: error.message
-      });
+      console.log(error)
   } finally {
     loading(false);
   }

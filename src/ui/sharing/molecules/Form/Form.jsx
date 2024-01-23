@@ -1,26 +1,43 @@
 import { useContext } from "react"
-import { useSelector } from "react-redux"
+import { form } from "@data/hero"
 import { FormContext } from "@contexts"
+import { inputs } from "@constants/form"
 import { Input } from "@sharing/atoms"
 import * as styles from "./Form.style"
 
 export default function Form() {
   const { formik } = useContext(FormContext);
-	const { inputs, form: form_props, colors, input_config } = useSelector(({config}) => config);
-  const { tertiary } = colors;
-  const { code_color } = input_config;
   const inputs_ids = Object.keys(inputs);
+  const { 
+    title,
+    bottom,
+    button,
+    payments
+  } = form;
   return (
-    <form id="contact" className={styles.form(form_props)} onSubmit={formik.handleSubmit}>
+    <form id="contact" className={styles.form} onSubmit={formik.handleSubmit}>
+      <p className={styles.title}>{title}</p>
       {inputs_ids.map((id, index) => (
         <Input key={`input-${id}-${index}`} id={id} />
       ))}
       <button type="submit" 
-        className={styles.button({
-          tertiary, 
-          code_color})}>
-        {form_props.button}
+        className={styles.button}>
+        {button}
       </button>
+      <div className={styles.bottom_container}>
+        <p className={styles.bottom_text}>{bottom}</p>
+        <div className={styles.payments}>
+          {payments.map((img, index) => (
+            <img 
+              src={img}
+              alt="input icon"
+              width={45.911}
+              height={30.698}
+              key={`payment-${index}`}
+            />
+          ))}
+        </div>
+      </div>
     </form>
   )
 }

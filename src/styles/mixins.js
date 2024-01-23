@@ -258,11 +258,18 @@ export const grid = ({
   rows = "auto",
   colGap = 0,
   rowGap = 0,
+  gapMinCol = null,
   areas 
 }) => {
   const areasContent = areas ? `grid-template-areas: ${areas};` : "";
-
-  return css`
+  const gapColResponsive = gapMinCol ? hanldeProperty({
+    max: colGap,
+    min: gapMinCol,
+    property: "gap"
+  }) : ``;
+  return cx(
+    gapColResponsive,
+    css`
     width: ${width};
     display: grid;
     row-gap: ${rowGap}px;    
@@ -270,7 +277,7 @@ export const grid = ({
     grid-template-columns: ${columns};
     grid-template-rows: ${rows};
     ${areasContent}
-  `;
+  `);
 };
 
 export const content = ({ 
