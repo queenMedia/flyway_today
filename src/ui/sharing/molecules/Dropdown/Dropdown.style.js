@@ -25,10 +25,10 @@ export const themes = {
   "light": {
     header: "transparent",
     border: "#transparent",
-    title: "#003188",
-    text: "#000000",
+    title: "#1070FF",
+    text: "#6B7280",
     arrow: "#000000",
-    wrapper_bg: "#f3f3f3",
-    wrapper_border: "#bcbcbc"
+    wrapper_bg: "transparent",
+    wrapper_border: "white"
   }
 }
