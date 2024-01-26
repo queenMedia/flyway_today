@@ -10,7 +10,7 @@ export default function TravelCards({
   bg
 }) {
   const { cards } = data;
-  const { button, list }  = cards;
+  const { button: button_card, list }  = cards;
   return (
     <div className={styles.container({bg})}>
       {arrow && <img 
